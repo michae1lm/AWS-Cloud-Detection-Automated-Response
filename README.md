@@ -1,5 +1,7 @@
 # AWS CloudTrail Detection & Response-Planning Lab
 
+[![Python tests](https://github.com/michae1lm/AWS-Cloud-Detection-Automated-Response/actions/workflows/tests.yml/badge.svg)](https://github.com/michae1lm/AWS-Cloud-Detection-Automated-Response/actions/workflows/tests.yml)
+
 A **local, offline proof of concept** for parsing CloudTrail-format JSON, identifying selected potentially risky changes, and producing **non-destructive response recommendations**. This starter lab demonstrates rule-based cloud threat detection and automated tests.
 
 > **Current scope:** This repository does **not** deploy AWS resources or perform live containment. All sample events are synthetic. "Automated response" means generating a response recommendation, not changing infrastructure.
@@ -25,7 +27,9 @@ python src/cloudtrail_detector.py examples/cloudtrail_sample.json
 python -m unittest discover -s tests -v
 ```
 
-The first command prints JSON alerts. The second runs tests; the GitHub Actions workflow runs the same suite on push and pull request.
+The first command prints JSON alerts. The second runs **11 unit tests**; the [GitHub Actions workflow](https://github.com/michae1lm/AWS-Cloud-Detection-Automated-Response/actions/runs/44416869802) has completed successfully and runs the same suite on pushes and pull requests.
+
+**Related personal lab:** [Detection-as-Code Security Pipeline](https://github.com/michae1lm/Detection-as-Code) — experimental Windows Sigma rules, synthetic positive/negative fixtures, and automated rule validation.
 
 ## Architecture
 
